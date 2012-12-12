@@ -1,6 +1,10 @@
 PhotoSite::Application.routes.draw do
-  
+
+  resources :news_items
+
   root to: 'static_pages#home'
+  
+  match '/news', to: 'news_items#index'
   
   match '/about', to: 'static_pages#about'
   match '/help', to: 'static_pages#help'
