@@ -10,4 +10,6 @@
 
 class NewsItem < ActiveRecord::Base
 	attr_accessible :newsbody
+	
+	validates_presence_of :newsbody
 end

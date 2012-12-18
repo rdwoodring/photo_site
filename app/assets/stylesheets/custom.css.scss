@@ -167,3 +167,21 @@ footer
 		}
 	}
 }
+
+/* forms */
+
+.news-input
+{
+	width:100%;
+}
+
+.error-message
+{
+	width:970px;
+	border:solid 1px #ff0000;
+	background-color:#ff9988;
+	color: #ff0000;
+	border-radius:10px;
+	-moz-border-radius:10px; /* Old Firefox */
+	padding:5px;
+}

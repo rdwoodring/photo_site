@@ -5,6 +5,8 @@ PhotoSite::Application.routes.draw do
   root to: 'static_pages#home'
   
   match '/news', to: 'news_items#index'
+  match '/news/new', to: 'news_items#new', as: :newnews, via: 'get'
+  match '/news/new', to: 'news_items#create', as: :newnews, via: 'post'
   
   match '/about', to: 'static_pages#about'
   match '/help', to: 'static_pages#help'

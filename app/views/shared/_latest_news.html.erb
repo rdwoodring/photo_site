@@ -1,0 +1,10 @@
+<% newsforhomepage = news_for_homepage %>
+
+<% if newsforhomepage.count > 0 %>
+	<% newsforhomepage.each do |news| %>
+		<h4><%= news.created_at.strftime("%m-%d-%Y at %I:%Mp") %></h4>
+		<p><%= news.newsbody %></p>
+	<% end %>
+<% else %>
+	<h4>No news updates</h4>
+<% end %>
