@@ -1,8 +1,14 @@
 PhotoSite::Application.routes.draw do
 
+  get "pictures/new"
+
   resources :news_items
+  resources :pictures
 
   root to: 'static_pages#home'
+  
+  match '/pictures/new', to: 'news_items#new', as: :newpictures, via: 'get'
+  match '/pictures/new', to: 'news_items#create', as: :newpictures, via: 'post'
   
   match '/news', to: 'news_items#index'
   match '/news/new', to: 'news_items#new', as: :newnews, via: 'get'
