@@ -21,7 +21,11 @@ class PicturesController < ApplicationController
 	end
 	
 	def index
-		@pictures =  Picture.all
+		if params[:imagecategory]
+			@pictures =  Picture.where(:imagecategory => params[:imagecategory])
+		else
+			@pictures = Picture.all
+		end
 	end
 	
 	def show
