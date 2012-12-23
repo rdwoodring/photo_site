@@ -14,7 +14,8 @@
 class Picture < ActiveRecord::Base
 	attr_accessible :title, :description, :image, :imagecategory
 	
-	validates_presence_of :title, :description, :imagecategory
+	validates_presence_of :title, :description
+	validates :imagecategory, presence: true, uniqueness: { case_sensitive: false }
 	
 	mount_uploader :image, ImageUploader
 end

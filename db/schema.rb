@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121222205019) do
+ActiveRecord::Schema.define(:version => 20121223195846) do
 
   create_table "news_items", :force => true do |t|
     t.text     "newsbody"
@@ -27,5 +27,7 @@ ActiveRecord::Schema.define(:version => 20121222205019) do
     t.string   "image"
     t.string   "imagecategory"
   end
+
+  add_index "pictures", ["title"], :name => "index_pictures_on_title", :unique => true
 
 end
