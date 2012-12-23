@@ -1,5 +1,14 @@
 <h1>Photographs</h1>
 <br />
 <% @pictures.each do |picture| %>
-	<%= link_to image_tag(picture.image_url.to_s, class: "thumb"), picture_path(picture) %>
+	<div class="thumb-container">
+		<%= link_to image_tag(picture.image_url.to_s, class: "thumb"), picture_path(picture) %><br />
+		<!-- IF USER IS ADMIN -->
+			<center><%= link_to "Edit", edit_picture_path(picture) %> | <%= link_to "Delete", picture_path(picture) %></center>
+		<!-- END IF USER IS ADMIN -->
+	</div>
 <% end %>
+
+<!-- IF USER IS ADMIN -->
+	<%= link_to image_tag("blankimage.png", class: "thumb"), (new_picture_path) %>
+<!-- END IF USE IS ADMIN -->
