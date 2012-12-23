@@ -9,7 +9,7 @@ PhotoSite::Application.routes.draw do
   
   match '/pictures/new', to: 'news_items#new', as: :newpictures, via: 'get'
   match '/pictures/new', to: 'news_items#create', as: :newpictures, via: 'post'
-  match 'pictures/category/:imagecategory', to: 'pictures#index'
+  match '/pictures/category/:imagecategory', to: 'pictures#index'
   
   match '/news', to: 'news_items#index'
   match '/news/new', to: 'news_items#new', as: :newnews, via: 'get'
