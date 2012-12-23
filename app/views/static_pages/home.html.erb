@@ -1,4 +1,12 @@
-
+<script type="text/javascript">
+  $(document).ready(function(){
+    
+$('.bxslider').bxSlider({
+  auto: true,
+  autoControls: false
+});
+  });
+</script>
 
 <div class="slider">
 	<ul class="bxslider">
@@ -8,6 +16,6 @@
 	</ul>
 </div>
 
-<!--TODO: make this section dynamic so that "news" updates are pulled from a db-->
+
 <h1>Latest News</h1>
 <%= render 'shared/latest_news' %>
