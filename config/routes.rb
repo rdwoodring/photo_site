@@ -1,5 +1,7 @@
 PhotoSite::Application.routes.draw do
 
+  devise_for :users
+
   get "pictures/new"
 
   resources :news_items
