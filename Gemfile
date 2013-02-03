@@ -4,11 +4,7 @@ gem 'rails', '3.2.11'
 
 gem 'carrierwave'
 
-<<<<<<< HEAD
-gem 'devise', '1.1.rc0'
-=======
 gem 'devise', '2.2.3'
->>>>>>> user-auth-with-devise
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

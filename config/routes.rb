@@ -1,10 +1,6 @@
 PhotoSite::Application.routes.draw do
 
-<<<<<<< HEAD
-  # devise_for :users
-=======
   devise_for :users
->>>>>>> user-auth-with-devise
 
   get "pictures/new"
 
