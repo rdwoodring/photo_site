@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-	before_filter :check_auth, :only => [:edit, :new, :update, :destroy]
+	before_filter :authenticate_user!, :except => [:show, :index]
 	
 	def new
 		@picture = Picture.new
@@ -30,9 +30,5 @@ class PicturesController < ApplicationController
 	
 	def show
 		@picture = Picture.find(params[:id])
-	end
-	
-	def check_auth
-		#do something to check authorization 
 	end
 end

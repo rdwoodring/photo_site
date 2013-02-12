@@ -1,5 +1,5 @@
 class NewsItemsController < ApplicationController
-	before_filter :check_auth, :only => [:edit, :new, :update, :destroy]
+	before_filter :authenticate_user!, :except => [:show, :index]
 	
 	def show
 	end
@@ -22,9 +22,5 @@ class NewsItemsController < ApplicationController
 		else
 			render action: 'new'
 		end
-	end
-	
-	def check_auth
-		#do something to check authorization 
 	end
 end
