@@ -3,12 +3,15 @@
 <% @pictures.each do |picture| %>
 	<div class="thumb-container">
 		<%= link_to image_tag(picture.image_url.to_s, class: "thumb"), picture_path(picture) %><br />
-		<!-- IF USER IS ADMIN -->
-			<center><%= link_to "Edit", edit_picture_path(picture) %> | <%= link_to "Delete", picture_path(picture) %></center>
-		<!-- END IF USER IS ADMIN -->
+		<% if can? :update, picture %>
+			<center><%= link_to "Edit", edit_picture_path(picture) %> | 
+		<% end %>
+		<% if can? :destroy, picture %>
+			<%= link_to "Delete", picture_path(picture) %></center>
+		<% end %>
 	</div>
 <% end %>
 
-<!-- IF USER IS ADMIN -->
+<% if can? :create, Picture %>
 	<%= link_to image_tag("blankimage.png", class: "thumb"), (new_picture_path) %>
-<!-- END IF USE IS ADMIN -->
+<% end %>
